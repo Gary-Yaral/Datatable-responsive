@@ -1,0 +1,57 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?a64c3531a07994c67f173a3c68bfa8ee") format("truetype"),
+url("./flaticon.woff?a64c3531a07994c67f173a3c68bfa8ee") format("woff"),
+url("./flaticon.woff2?a64c3531a07994c67f173a3c68bfa8ee") format("woff2"),
+url("./flaticon.eot?a64c3531a07994c67f173a3c68bfa8ee#iefix") format("embedded-opentype"),
+url("./flaticon.svg?a64c3531a07994c67f173a3c68bfa8ee#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "magnifying-glass": "\f101",
+    "new": "\f102",
+    "refresh-button": "\f103",
+    "delete": "\f104",
+    "clipboard": "\f105",
+    "logout": "\f106",
+    "edit-button": "\f107",
+    "index": "\f108",
+);
+
+.flaticon-magnifying-glass:before {
+    content: map-get($flaticon-map, "magnifying-glass");
+}
+.flaticon-new:before {
+    content: map-get($flaticon-map, "new");
+}
+.flaticon-refresh-button:before {
+    content: map-get($flaticon-map, "refresh-button");
+}
+.flaticon-delete:before {
+    content: map-get($flaticon-map, "delete");
+}
+.flaticon-clipboard:before {
+    content: map-get($flaticon-map, "clipboard");
+}
+.flaticon-logout:before {
+    content: map-get($flaticon-map, "logout");
+}
+.flaticon-edit-button:before {
+    content: map-get($flaticon-map, "edit-button");
+}
+.flaticon-index:before {
+    content: map-get($flaticon-map, "index");
+}

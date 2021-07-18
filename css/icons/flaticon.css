@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("./flaticon.ttf?a64c3531a07994c67f173a3c68bfa8ee") format("truetype"),
+url("./flaticon.woff?a64c3531a07994c67f173a3c68bfa8ee") format("woff"),
+url("./flaticon.woff2?a64c3531a07994c67f173a3c68bfa8ee") format("woff2"),
+url("./flaticon.eot?a64c3531a07994c67f173a3c68bfa8ee#iefix") format("embedded-opentype"),
+url("./flaticon.svg?a64c3531a07994c67f173a3c68bfa8ee#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-magnifying-glass:before {
+    content: "\f101";
+}
+.flaticon-new:before {
+    content: "\f102";
+}
+.flaticon-refresh-button:before {
+    content: "\f103";
+}
+.flaticon-delete:before {
+    content: "\f104";
+}
+.flaticon-clipboard:before {
+    content: "\f105";
+}
+.flaticon-logout:before {
+    content: "\f106";
+}
+.flaticon-edit-button:before {
+    content: "\f107";
+}
+.flaticon-index:before {
+    content: "\f108";
+}

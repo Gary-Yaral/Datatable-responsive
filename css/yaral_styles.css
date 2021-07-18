@@ -1,0 +1,136 @@
+:root{
+
+    --base-color:rgb(82, 82, 255);
+    --row-style: rgb(219, 219, 255);
+    --font: Arial;
+    --update: rgb(37, 182, 37);
+    --delete: rgb(221, 45, 45);
+} 
+
+.datatable{
+    display:grid;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    height:auto;
+    font-family:var(--font);
+    border: 1px solid var(--base-color);
+}
+
+.table-container{
+    width:100%;
+    overflow: auto;
+}
+
+table{
+    border-collapse: collapse;
+    width:100%;
+}
+
+.thead{
+    background:white;
+    color:var(--base-color);
+    height: 2rem;
+    text-align: left;
+    border-bottom: 1px solid var(--base-color);
+}
+
+
+tr{
+    min-height: 3rem;
+}
+
+td{
+    min-width: 4rem;
+}
+
+td:last-child,
+td a{
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+
+td:last-child{
+   max-width: 5rem;
+    
+}
+
+
+td a{
+    text-decoration: none;
+    border-radius: .5rem;
+    height:2rem;
+    width:2rem;
+    background:var(--base-color);
+    font-size:1rem;
+    color:white;
+}
+
+td a:nth-child(1){
+    background:var(--update);
+}
+
+td a:nth-child(2){
+    background:var(--delete);
+}
+
+.tr-style{
+    background: var(--row-style);
+}
+
+.pagination{
+    font-family:var(--font);
+    width:100%;
+    justify-content:flex-end;
+}
+
+.pagination,
+.pagination a{
+    display:flex;
+    height: 2rem;
+}
+
+.pag-btn{
+    justify-content:center;
+    align-items:center;
+    text-decoration: none;
+    background: white;
+    color:var(--base-color);
+    width:2rem;
+}
+
+.active-page{
+    display:flex;
+    background: var(--base-color);
+    color:white;
+}
+
+.footer-table{
+    height:2rem;
+    display:grid;
+    grid-template-columns: .5fr 3fr;
+    border-top: 1px solid var(--base-color);
+}
+
+.perPage{
+    display:flex;
+    justify-self: left;
+    width:4rem;
+    outline: none;
+    border:none;
+}
+
+.total-items{
+    width:calc(100% - 1rem);
+    height: 2rem;
+    font-size:1rem;
+    display:flex;
+    justify-content: left;
+    align-items: center;
+    background:var(--base-color);
+    color:white;
+    padding-left: 1rem;
+
+}
