@@ -11,7 +11,7 @@ class DataTable{
         
         this.listValue = false;
         this.data = data;
-        this.data[0][this.data[0].length] = 'Acciones';
+        this.data[0][this.data[0].length] = '';
         this.pages = [];
         this.id = 0;
         this.active = 0;
@@ -21,7 +21,10 @@ class DataTable{
         this.container.innerHTML = "";
         let tableContainer = document.createElement('div'),
         itemsNumber =  document.createElement('div'),
+        selectContainer =document.createElement('div'),
+        beforeSelect = document.createElement('div'),
         select = document.createElement('select'),
+        afterSelect = document.createElement('div'),
         newTable = document.createElement('table'),
         buttonsPag = document.createElement('div'),
         pageNumber = document.createElement('div'),
@@ -33,8 +36,10 @@ class DataTable{
         newTable.append(tbody);
         newTable.append(tfooter);
         tableContainer.append(newTable);
-        itemsNumber.innerHTML = "Hay "+ this.data[1].length+" productos ingresados";
+        itemsNumber.innerHTML = "<span>Total items: </span> "+ this.data[1].length;
         itemsNumber.classList.add('total-items');
+        beforeSelect.innerHTML = 'Show ';
+        afterSelect.innerHTML = 'items';
 
         for(let index = 1; index <= this.data[1].length; index++){
             let option = document.createElement('option');
@@ -57,12 +62,16 @@ class DataTable{
         })
         select.selectedIndex = this.itemPerPage -1;
         pageNumber.classList.add('pagination');
-        buttonsPag.append(select);
+        selectContainer.classList.add('select-container');
+        selectContainer.append(beforeSelect);
+        selectContainer.append(select);
+        selectContainer.append(afterSelect);
+        buttonsPag.append(selectContainer);
         buttonsPag.append(pageNumber);
         buttonsPag.classList.add('footer-table');
-        this.container.append(itemsNumber);
         this.container.append(tableContainer);
         this.container.append(buttonsPag);
+        this.container.append(itemsNumber);
         this.renderHeaders();
         this.container.querySelector('tbody').innerHTML = ""; 
         this.pagination();

@@ -1,14 +1,15 @@
 :root{
 
-    --base-color:rgb(82, 82, 255);
-    --row-style: rgb(219, 219, 255);
+    --base-color:rgb(40, 165, 165);
+    --row-style: rgb(75, 185, 185,0.2);
     --font: Arial;
-    --update: rgb(37, 182, 37);
-    --delete: rgb(221, 45, 45);
+    --update: rgb(51, 210, 51);
+    --delete: rgb(255, 61, 61);
+    --white: rgb(255,255,255);
+    --option-color: rgb(22, 22, 22);
 } 
 
 .datatable{
-    display:grid;
     width:100%;
     display:flex;
     flex-direction:column;
@@ -28,13 +29,16 @@ table{
 }
 
 .thead{
-    background:white;
-    color:var(--base-color);
+    background:var(--base-color);;
+    color:var(--white);
     height: 2rem;
     text-align: left;
     border-bottom: 1px solid var(--base-color);
 }
 
+th{
+    min-width: 6rem;
+}
 
 tr{
     min-height: 3rem;
@@ -44,19 +48,17 @@ td{
     min-width: 4rem;
 }
 
+td:first-child,
+th:first-child{
+    text-align:center;
+}
+
 td:last-child,
 td a{
     display:flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items:center;
 }
-
-
-td:last-child{
-   max-width: 5rem;
-    
-}
-
 
 td a{
     text-decoration: none;
@@ -74,63 +76,90 @@ td a:nth-child(1){
 
 td a:nth-child(2){
     background:var(--delete);
+    margin-left:.2rem;
 }
 
 .tr-style{
     background: var(--row-style);
 }
 
+.pagination-container{
+    overflow-x: auto;
+}
+
 .pagination{
-    font-family:var(--font);
     width:100%;
+    font-family:var(--font);
     justify-content:flex-end;
 }
 
 .pagination,
 .pagination a{
     display:flex;
-    height: 2rem;
+    min-height: 2rem;
 }
 
 .pag-btn{
     justify-content:center;
     align-items:center;
     text-decoration: none;
-    background: white;
-    color:var(--base-color);
-    width:2rem;
+    background: var(--base-color);
+    color:var(--white);
+    min-width:2rem;
 }
 
 .active-page{
     display:flex;
-    background: var(--base-color);
-    color:white;
+    background: white;
+    color:var(--base-color);
 }
 
 .footer-table{
     height:2rem;
     display:grid;
-    grid-template-columns: .5fr 3fr;
+    grid-template-columns: .5fr 3fr ;
+    background:var(--base-color);
     border-top: 1px solid var(--base-color);
+    border-bottom: 1px solid var(--base-color);
+}
+
+.select-container{
+    width:100%;
+    margin-left: .5rem;
+    display:flex;
+    align-items:center;
+    font-size:.8rem;
+    color:var(--white);
 }
 
 .perPage{
     display:flex;
     justify-self: left;
-    width:4rem;
+    width:2.5rem;
     outline: none;
     border:none;
+    justify-content:center;
+    margin: 0 .2rem;
+   
+}
+
+.perPage option{
+    background:var(--white); 
+    color:var(--option-color);  
 }
 
 .total-items{
-    width:calc(100% - 1rem);
+    text-align:center;
+    width:calc(100% - .5rem);
     height: 2rem;
-    font-size:1rem;
+    font-size:.8rem;
     display:flex;
     justify-content: left;
     align-items: center;
-    background:var(--base-color);
-    color:white;
-    padding-left: 1rem;
+    padding-left: .5rem;
+}
 
+.total-items span{
+    font-weight:bold;
+    margin-right:.2rem;
 }
