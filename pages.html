@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+:root{
+    --back: rgb(43, 163, 143);
+}
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            min-height:100vh;
+            background:var(--back);
+        }
+        /* Pagination Number*/
+        .page-number ul{
+            display:flex;
+            background:rgb(255, 255, 255);
+            padding:4px;
+            border-radius: 45px;
+            height:2rem;
+            align-items: center;
+        }
+
+        .page-number ul li {
+            list-style: none;
+        }
+
+        
+
+        .page-number ul .index-page{
+            border-radius:50%;
+            width:1.5rem;
+            height:1.5rem;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+        }
+
+        .preview, .next{
+            width: 3rem;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            height:100%;            
+        }
+
+        .dots{
+            width:auto;
+        }
+
+        .index-page:hover,
+        .preview:hover,
+        .next:hover{
+            background:var(--back);
+            color:white;
+        }
+
+        .preview{
+            border-radius: 25px 10px 10px 25px;
+            margin-right:3px;
+        }
+
+        .next{
+            border-radius: 10px 25px 25px 10px;
+            margin-left:3px;
+        }
+
+        .active-page{
+            background:var(--back);
+            color:white;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="page-number">
+        <ul>
+            <li class="preview">Prev</li>
+            <li class="index-page">1</li>
+            <li class="dots">...</li>
+            <li class="index-page">3</li>
+            <li class="index-page active-page">4</li>
+            <li class="index-page">6</li>
+            <li class="dots">...</li>
+            <li class="index-page">9</li>
+            <li class="next">Next</li>
+        </ul>
+    </div>
+    <script src="js/render-btns.js"></script>
+</body>
+</html>
